@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up – Dear Mama</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+
+  <!-- NAV (same as signin) -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a class="logo" href="index.html" aria-label="Dear Mama Home">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="logo-text">Dear mama</span>
+        </a>
+
+        <ul class="nav-links" aria-label="Primary">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="baby-tracker.html">Baby Wellness</a></li>
+          <li><a href="mother-wellness.html">Mother Wellness</a></li>
+          <li><a href="ai-companion.html">AI Companion</a></li>
+        </ul>
+<div class="nav-actions">
+  <a id="nav-signin" class="nav-link-btn" href="signin.html">Sign In</a>
+  <a id="nav-getstarted" class="btn-primary" href="signup.html">Get Started</a>
+</div>
+
+
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" hidden>
+        <a href="index.html">Home</a>
+        <a href="baby-tracker.html">Baby Wellness</a>
+        <a href="mother-wellness.html">Mother Wellness</a>
+        <a href="ai-companion.html">AI Companion</a>
+        <div class="mobile-actions">
+          <a class="nav-link-btn" href="signin.html">Sign In</a>
+          <a class="btn-primary active" href="signup.html">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SIGN UP -->
+  <main class="auth-page">
+    <div class="container">
+      <div class="auth-card">
+
+        <div class="auth-header">
+          <div class="auth-badge" aria-hidden="true">💗</div>
+          <div>
+            <h1>Create your account</h1>
+            <p>Start tracking wellness with gentle support.</p>
+          </div>
+        </div>
+
+       <form class="auth-form" id="signup-form">
+
+  <label class="auth-label" for="signup-name">Name</label>
+  <input
+    class="auth-input"
+    id="signup-name"
+    type="text"
+    placeholder="Your name"
+    required
+  />
+
+  <label class="auth-label" for="signup-email">Email</label>
+  <input
+    class="auth-input"
+    id="signup-email"
+    type="email"
+    placeholder="Email"
+    required
+  />
+
+  <label class="auth-label" for="signup-password">Password</label>
+  <input
+    class="auth-input"
+    id="signup-password"
+    type="password"
+    placeholder="Password"
+    required
+  />
+
+  <label class="auth-label" for="signup-confirm">Confirm password</label>
+  <input
+    class="auth-input"
+    id="signup-confirm"
+    type="password"
+    placeholder="Confirm password"
+    required
+  />
+
+  <button type="submit" class="btn-primary full-width">
+    Create Account
+  </button>
+
+  <p class="auth-foot">
+    Already have an account?
+    <a class="auth-link" href="signin.html">Sign in</a>
+  </p>
+</form>
+
+
+<script type="module" src="./src/auth.js"></script>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const toggle = document.querySelector(".nav-toggle");
+    const menu = document.querySelector(".mobile-menu");
+
+    toggle?.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!expanded));
+      menu.hidden = expanded;
+    });
+  </script>
+<script type="module" src="./src/auth-ui.js"></script>
+
+
+</body>
+</html>

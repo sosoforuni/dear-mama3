@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baby Wellness Tracker - Dear Mama</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+  <!-- NAV (same as index) -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a class="logo" href="index.html" aria-label="Dear Mama Home">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="logo-text">Dear mama</span>
+        </a>
+
+        <ul class="nav-links" aria-label="Primary">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="baby-tracker.html" class="active">Baby Wellness</a></li>
+          <li><a href="mother-wellness.html">Mother Wellness</a></li>
+          <li><a href="ai-companion.html">AI Companion</a></li>
+        </ul>
+ <div class="nav-actions">
+  <a id="nav-signin" class="nav-link-btn" href="signin.html">Sign In</a>
+  <a id="nav-getstarted" class="btn-primary" href="signup.html">Get Started</a>
+  <a id="nav-logout" class="nav-link-btn" href="#" style="display:none;">Log out</a>
+</div>
+
+
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="mobile-menu" hidden>
+        <a href="index.html">Home</a>
+        <a href="baby-tracker.html" class="active">Baby Wellness</a>
+        <a href="mother-wellness.html">Mother Wellness</a>
+        <a href="ai-companion.html">AI Companion</a>
+        <div class="mobile-actions">
+          <a class="nav-link-btn" href="signin.html">Sign In</a>
+          <a class="btn-primary" href="#log-area">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header page-header--baby">
+    <div class="container">
+      <span class="page-tag">Baby Wellness</span>
+      <h1>Baby Wellness Tracker</h1>
+      <p>Log feedings and sleep sessions quickly — and see patterns over time.</p>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="content-section">
+    <div class="container">
+
+      <!-- DASHBOARD OVERVIEW (optional: we can connect later) -->
+      <section class="dashboard-grid" aria-label="Daily summary">
+        <article class="dashboard-card">
+          <div class="card-icon card-icon--blue" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M2 12h20"></path>
+            </svg>
+          </div>
+          <h4>Today’s Feeds</h4>
+          <p class="metric metric--blue" id="metric-feeds">—</p>
+          <p class="hint" id="metric-last-feed">Last feed: —</p>
+        </article>
+
+        <article class="dashboard-card">
+          <div class="card-icon card-icon--purple" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </div>
+          <h4>Sleep Today</h4>
+          <p class="metric metric--purple" id="metric-sleep">—</p>
+          <p class="hint" id="metric-last-sleep">Last sleep: —</p>
+        </article>
+      </section>
+
+      <!-- TABS -->
+      <section class="tabs" id="log-area" aria-label="Logging tabs">
+        <div class="tabs-switch">
+          <button class="switch-btn active" id="feeding-tab-btn">🍼 Feeding</button>
+          <button class="switch-btn" id="sleep-tab-btn">🌙 Sleep</button>
+        </div>
+
+        <!-- FEEDING TAB -->
+        <section id="feeding-tab" class="tab-content active" role="tabpanel" aria-labelledby="feeding-tab-btn">
+          <div class="two-column">
+
+            <!-- LEFT: FORM + TIP -->
+            <div>
+              <div class="panel">
+                <div class="panel-header">
+                  <h3>Log New Feeding</h3>
+                  <p class="panel-sub">Quick entries help you spot patterns and timing.</p>
+                </div>
+
+                <div class="input-group">
+                  <label>Feeding Type</label>
+                  <div class="pill-group" role="group" aria-label="Feeding type">
+                    <button class="pill active" type="button">Breastfeeding</button>
+                    <button class="pill" type="button">Bottle</button>
+                  </div>
+                </div>
+
+              <div class="input-group duration-row">
+  <label for="feed-duration">Duration (minutes)</label>
+  <input id="feed-duration" type="number" value="15" />
+</div>
+
+            <div class="input-group" id="sideGroup">
+  <label>Side</label>
+  <div class="pill-group" role="group" aria-label="Side">
+    <button class="pill active" type="button">Left</button>
+    <button class="pill" type="button">Right</button>
+  </div>
+</div>
+
+                <button class="btn-primary full-width" type="button" id="save-feeding">Save Feeding</button>
+                <p class="form-note" id="feeding-note">Sign in to save and view history.</p>
+              </div>
+
+              <aside class="tip-card" aria-label="Tip">
+                <h4>💡 Feeding Tip</h4>
+                <p>Remember to burp your baby after each feeding. Short breaks can help.</p>
+              </aside>
+            </div>
+
+            <!-- RIGHT: RECENT FEEDINGS -->
+            <div>
+              <div class="list-header">
+                <h3>Recent Feedings</h3>
+                <p class="muted">Most recent entries appear here.</p>
+              </div>
+<div class="recent-header">
+<button id="clearFeedingsBtn" type="button">Clear</button>
+</div>
+
+
+
+              <!-- ✅ EMPTY - will be loaded from Firebase -->
+<div id="feeding-list"></div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- SLEEP TAB -->
+        <section id="sleep-tab" class="tab-content" role="tabpanel" aria-labelledby="sleep-tab-btn" hidden>
+          <div class="two-column">
+
+            <!-- LEFT: FORM -->
+            <div>
+              <div class="panel">
+                <div class="panel-header">
+                  <h3>Log Sleep Session</h3>
+                  <p class="panel-sub">Track naps and night sleep to see total rest.</p>
+                </div>
+
+                <div class="input-group">
+                  <label>Sleep Type</label>
+                  <div class="pill-group" role="group" aria-label="Sleep type">
+                    <button class="pill active" type="button">Nap</button>
+                    <button class="pill" type="button">Night</button>
+                  </div>
+                </div>
+
+                <div class="input-group duration-row">
+  <label for="sleep-duration">Duration (minutes)</label>
+  <input id="sleep-duration" type="number" value="15" />
+</div>
+
+                <div class="input-group">
+                  <label>Sleep Quality</label>
+                  <div class="pill-group" role="group" aria-label="Sleep quality">
+                    <button class="pill" type="button">Poor</button>
+                    <button class="pill active" type="button">Fair</button>
+                    <button class="pill" type="button">Good</button>
+                  </div>
+                </div>
+
+                <button class="btn-primary full-width" type="button" id="save-sleep">Save Sleep Log</button>
+                <p class="form-note" id="sleep-note">Sign in to save and view history.</p>
+              </div>
+            </div>
+
+            <!-- RIGHT: HISTORY -->
+            <div>
+              <div class="list-header">
+                <h3>Sleep History</h3>
+                <p class="muted">Recent sleep sessions appear here.</p>
+              </div>
+<div class="recent-header">
+  <button id="clearsleepBtn" type="button">Clear</button>
+</div>
+
+              <!-- ✅ EMPTY - will be loaded from Firebase -->
+              <div class="entry-list" id="sleep-list"></div>
+            </div>
+
+          </div>
+        </section>
+
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2024 Dear Mama. Made with love for mothers everywhere 💕</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- NON-MODULE SCRIPT: UI only -->
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const menu = document.querySelector(".mobile-menu");
+
+    toggle?.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!expanded));
+      menu.hidden = expanded;
+    });
+
+    // Tabs
+    const feedingBtn = document.getElementById("feeding-tab-btn");
+    const sleepBtn = document.getElementById("sleep-tab-btn");
+    const feedingTab = document.getElementById("feeding-tab");
+    const sleepTab = document.getElementById("sleep-tab");
+
+    function showTab(which) {
+      const isFeeding = which === "feeding";
+      feedingBtn.classList.toggle("active", isFeeding);
+      sleepBtn.classList.toggle("active", !isFeeding);
+      feedingTab.classList.toggle("active", isFeeding);
+      sleepTab.classList.toggle("active", !isFeeding);
+      feedingTab.hidden = !isFeeding;
+      sleepTab.hidden = isFeeding;
+    }
+
+    feedingBtn?.addEventListener("click", () => showTab("feeding"));
+    sleepBtn?.addEventListener("click", () => showTab("sleep"));
+
+    // Pills
+    document.querySelectorAll(".pill-group").forEach(group => {
+      group.addEventListener("click", (e) => {
+        const btn = e.target.closest(".pill");
+        if (!btn) return;
+        group.querySelectorAll(".pill").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+      });
+    });
+     // ✅ Hide Side when "Bottle" is selected (Feeding Type)
+  const sideGroup = document.getElementById("sideGroup");
+  const feedingTypeGroup = document.querySelector('#feeding-tab .pill-group[aria-label="Feeding type"]');
+
+  function updateSideVisibility() {
+    if (!sideGroup || !feedingTypeGroup) return;
+
+    const activeType = feedingTypeGroup.querySelector(".pill.active")?.innerText?.trim() || "Breastfeeding";
+    const isBottle = activeType.toLowerCase() === "bottle";
+
+    sideGroup.style.display = isBottle ? "none" : "block";
+  }
+
+  // Run once on page load
+  updateSideVisibility();
+
+  // Update whenever user clicks feeding type pills
+  feedingTypeGroup?.addEventListener("click", () => {
+    // wait 1 tick so your existing pill code finishes setting .active
+    setTimeout(updateSideVisibility, 0);
+  });
+  </script>
+
+  <!-- MODULE SCRIPT: Firebase save + load -->
+  <script type="module">
+    import { auth, db } from "./src/firebase.js";
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import { saveFeeding, saveSleep, getRecentFeedings, getRecentSleeps } from "./src/data.js";
+
+    const feedingList = document.getElementById("feeding-list");
+    const sleepList = document.getElementById("sleep-list");
+
+    const feedingNote = document.getElementById("feeding-note");
+    const sleepNote = document.getElementById("sleep-note");
+
+    const saveFeedingBtn = document.getElementById("save-feeding");
+    const saveSleepBtn = document.getElementById("save-sleep");
+
+    const metricFeeds = document.getElementById("metric-feeds");
+    const metricLastFeed = document.getElementById("metric-last-feed");
+    const metricSleep = document.getElementById("metric-sleep");
+    const metricLastSleep = document.getElementById("metric-last-sleep");
+
+    function getActivePillText(tabId, groupIndex) {
+      const groups = document.querySelectorAll(`#${tabId} .pill-group`);
+      return groups[groupIndex]?.querySelector(".pill.active")?.innerText?.trim() || "";
+    }
+
+    function fmtTime(ms) {
+      if (!ms) return "—";
+      return new Date(ms).toLocaleString();
+    }
+
+    function renderFeedingItem(item) {
+      const type = item.type || "Feeding";
+      const side = item.side ? ` • ${item.side}` : "";
+      const duration = item.durationMinutes ? `${item.durationMinutes} minutes` : "";
+      return `
+        <article class="entry">
+          <div class="entry-left">
+            <div class="entry-badge badge-blue">🍼</div>
+            <div>
+              <p class="entry-title">${type}${side}</p>
+              <p class="entry-sub">${duration}</p>
+            </div>
+          </div>
+          <div class="entry-right">
+            <p class="entry-time">${fmtTime(item.createdAt)}</p>
+            <span class="entry-chip">Saved</span>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderSleepItem(item) {
+      const sleepType = item.sleepType || "Sleep";
+      const duration = item.durationMinutes ? `${item.durationMinutes} minutes` : "";
+      const quality = item.quality ? ` • Quality: ${item.quality}` : "";
+      return `
+        <article class="entry">
+          <div class="entry-left">
+            <div class="entry-badge badge-purple">🌙</div>
+            <div>
+              <p class="entry-title">${sleepType}</p>
+              <p class="entry-sub">${duration}${quality}</p>
+            </div>
+          </div>
+          <div class="entry-right">
+            <p class="entry-time">${fmtTime(item.createdAt)}</p>
+            <span class="entry-chip">Saved</span>
+          </div>
+        </article>
+      `;
+    }
+
+    async function refresh() {
+      const feedings = await getRecentFeedings(20);
+      const sleeps = await getRecentSleeps(20);
+
+      feedingList.innerHTML = feedings.map(renderFeedingItem).join("") || `<p class="muted">No feedings yet.</p>`;
+      sleepList.innerHTML = sleeps.map(renderSleepItem).join("") || `<p class="muted">No sleep logs yet.</p>`;
+
+      metricFeeds.textContent = feedings.length ? String(feedings.length) : "0";
+      metricLastFeed.textContent = feedings.length ? `Last feed: ${fmtTime(feedings[0].createdAt)}` : "Last feed: —";
+
+      metricSleep.textContent = sleeps.length ? `${Math.round((sleeps[0].durationMinutes || 0) / 60)}h` : "—";
+      metricLastSleep.textContent = sleeps.length ? `Last sleep: ${fmtTime(sleeps[0].createdAt)}` : "Last sleep: —";
+    }
+
+    onAuthStateChanged(auth, async (user) => {
+      const signedIn = !!user;
+
+      saveFeedingBtn.disabled = !signedIn;
+      saveSleepBtn.disabled = !signedIn;
+
+      feedingNote.textContent = signedIn ? "Saved to your account ✅" : "Sign in to save and view history.";
+      sleepNote.textContent = signedIn ? "Saved to your account ✅" : "Sign in to save and view history.";
+
+      if (!signedIn) {
+        feedingList.innerHTML = `<p class="muted">Please sign in to see your feedings.</p>`;
+        sleepList.innerHTML = `<p class="muted">Please sign in to see your sleep logs.</p>`;
+        metricFeeds.textContent = "—";
+        metricLastFeed.textContent = "Last feed: —";
+        metricSleep.textContent = "—";
+        metricLastSleep.textContent = "Last sleep: —";
+        return;
+      }
+
+      await refresh();
+    });
+saveFeedingBtn.addEventListener("click", async () => {
+  try {
+    const duration = Number(document.getElementById("feed-duration").value);
+    if (!duration || duration <= 0) return alert("Enter a valid duration");
+const type = getActivePillText("feeding-tab", 0) || "Breastfeeding";
+const side = type === "Bottle"
+  ? null
+  : (getActivePillText("feeding-tab", 1) || "Left");
+
+    await saveFeeding({
+      type,
+      durationMinutes: duration,
+      side,
+      amountMl: null,
+      note: ""
+    });
+
+    await refresh();
+  } catch (e) {
+    alert("Save failed: " + e.message);
+  }
+});
+
+    saveSleepBtn.addEventListener("click", async () => {
+      try {
+        const duration = Number(document.getElementById("sleep-duration").value);
+        if (!duration || duration <= 0) return alert("Enter a valid duration");
+
+        const sleepType = getActivePillText("sleep-tab", 0) || "Nap";
+        const quality = getActivePillText("sleep-tab", 1) || "Fair";
+
+        await saveSleep({ sleepType, durationMinutes: duration, quality });
+        await refresh();
+      } catch (e) {
+        alert("Save failed: " + e.message);
+        console.error(e);
+      }
+    });
+  </script>
+<script type="module">
+  import { auth } from "./src/firebase.js";
+  import { onAuthStateChanged, signOut } 
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+  const signInBtn = document.getElementById("nav-signin");
+  const getStartedBtn = document.getElementById("nav-getstarted");
+  const logoutBtn = document.getElementById("nav-logout");
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // ✅ USER LOGGED IN
+      signInBtn.style.display = "none";
+      getStartedBtn.style.display = "none";
+      logoutBtn.style.display = "inline-block";
+    } else {
+      // ❌ USER LOGGED OUT
+      signInBtn.style.display = "inline-block";
+      getStartedBtn.style.display = "inline-block";
+      logoutBtn.style.display = "none";
+    }
+  });
+
+  logoutBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+    await signOut(auth);
+    window.location.href = "index.html";
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dear Mama</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a class="logo" href="index.html" aria-label="Dear Mama Home">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="logo-text">Dear mama</span>
+        </a>
+
+        <ul class="nav-links" aria-label="Primary">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="baby-tracker.html">Baby Wellness</a></li>
+          <li><a href="mother-wellness.html">Mother Wellness</a></li>
+          <li><a href="ai-companion.html">AI Companion</a></li>
+        </ul>
+<div class="nav-actions">
+  <a id="nav-signin" class="nav-link-btn" href="signin.html">Sign In</a>
+  <a id="nav-getstarted" class="btn-primary" href="signup.html">Get Started</a>
+  <a id="nav-logout" class="nav-link-btn" href="#" style="display:none;">Log out</a>
+</div>
+
+</div>
+
+
+      <!-- Mobile menu -->
+      <div class="mobile-menu" hidden>
+        <a href="index.html" class="active">Home</a>
+        <a href="baby-tracker.html">Baby Wellness</a>
+        <a href="mother-wellness.html">Mother Wellness</a>
+        <a href="ai-companion.html">AI Companion</a>
+        <div class="mobile-actions">
+          <a class="nav-link-btn" href="signin.html">Sign In</a>
+          <a class="btn-primary" href="#get-started">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+<!-- Welcome -->
+<section class="welcome-section">
+  <div class="container">
+    <h2 id="welcome-text" class="welcome-text"></h2>
+  </div>
+</section>
+
+  <!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-content">
+    <div class="hero-inner">
+     <h1 class="hero-title">
+  <span class="accent">Supporting </span> motherhood 
+</h1>
+
+<p class="hero-subtitle">
+  Gentle care for you and your baby is about creating a nurturing, calm, and loving environment
+</p>
+
+      </h1>
+
+      <div class="hero-actions">
+  <!-- Go to sign up page -->
+  <a href="signup.html" class="btn-primary">Start Your Journey</a>
+
+  <!-- Scroll to "Everything You Need in One Place" -->
+  <a href="#features" class="btn-secondary-outline">Learn More</a>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS (move it here) -->
+<section class="how-it-works how-it-works--soft">
+  <div class="container">
+    <div class="how-card">
+      <h2>How Dear Mama Works</h2>
+      <p>Gentle support for you and your baby, one step at a time.</p>
+
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-icon">📝</div>
+          <h3>Check in</h3>
+          <p>Log your mood, recovery, or baby’s routine in under a minute.</p>
+        </div>
+
+        <div class="how-step">
+          <div class="how-icon">🌱</div>
+          <h3>Reflect</h3>
+          <p>Notice patterns over time through simple summaries.</p>
+        </div>
+
+        <div class="how-step">
+          <div class="how-icon">💗</div>
+          <h3>Get support</h3>
+          <p>Explore gentle tips + resources when you need them.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Everything You Need in One Place</h2>
+        <p>Tools designed for mothers navigating pregnancy and early motherhood.</p>
+      </div>
+
+      <div class="features-grid">
+        <a href="baby-tracker.html" class="feature-card">
+          <div class="feature-icon baby" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+              <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+            </svg>
+          </div>
+          <h3>Baby Wellness Tracker</h3>
+          <p>Track your baby’s feeding and sleeping in one easy-to-use feature designed to support daily parenting routines.</p>
+          <div class="feature-list">
+            <span>• Track your baby’s feeding and sleeping activities in one convenient place </span>
+                        <span>• Choose the feeding method, whether bottle feeding or breastfeeding</span>
+            <span>• Monitor your baby’s sleeping times and durations</span>
+
+          </div>
+          <span class="feature-link">Explore Baby Wellness →</span>
+        </a>
+
+        <a href="mother-wellness.html" class="feature-card">
+          <div class="feature-icon mother" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <h3>Mother Wellness Hub</h3>
+          <p>A dedicated space designed to support mothers through every stage of physical and emotional recovery.</p>
+          <div class="feature-list">
+            <span>• Regular mental health check-ins to help you reflect on your emotional well-being</span>
+            <span>• Postpartum depression screening (EPDS) to support early awareness and care</span>
+            <span>• Daily recovery tips to encourage healthy habits and self-care</span>
+
+          </div>
+          <span class="feature-link">Support Your Wellness →</span>
+        </a>
+
+        <a href="ai-companion.html" class="feature-card featured">
+          <div class="feature-badge">Most Popular</div>
+          <div class="feature-icon ai" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+          </div>
+          <h3>Lan — Your AI Companion</h3>
+          <p>Instant, compassionate support anytime — especially during those 3 AM questions.</p>
+          <div class="feature-list">
+            <span>• 24/7 availability</span>
+            <span>• Expert-backed answers</span>
+            <span>• Emotional support</span>
+            <span>• Personalized guidance</span>
+          </div>
+          <span class="feature-link">Chat with Lan →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="get-started">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Start Your Journey with Dear Mama Today</h2>
+        <p>Join mothers who are nurturing themselves and their babies with confidence.</p>
+        <a class="btn-primary btn-large" href="signup.html">Get Started Free</a>
+        <p class="cta-note">No credit card required • Free forever • Available on all devices</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2025 Dear Mama. All rights reserved. Made with love for mothers everywhere 💕</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple mobile nav toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const menu = document.querySelector(".mobile-menu");
+
+    toggle.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!expanded));
+      menu.hidden = expanded;
+    });
+  </script>
+<script type="module" src="./src/auth-ui.js"></script>
+<script type="module">
+  import { auth } from "./src/firebase.js";
+  import { onAuthStateChanged, signOut } 
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+  const signInBtn = document.getElementById("nav-signin");
+  const getStartedBtn = document.getElementById("nav-getstarted");
+  const logoutBtn = document.getElementById("nav-logout");
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // ✅ USER LOGGED IN
+      signInBtn.style.display = "none";
+      getStartedBtn.style.display = "none";
+      logoutBtn.style.display = "inline-block";
+    } else {
+      // ❌ USER LOGGED OUT
+      signInBtn.style.display = "inline-block";
+      getStartedBtn.style.display = "inline-block";
+      logoutBtn.style.display = "none";
+    }
+  });
+
+  logoutBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+    await signOut(auth);
+    window.location.href = "index.html";
+  });
+</script>
+<script type="module" src="./script.js"></script>
+
+</body>
+</html>

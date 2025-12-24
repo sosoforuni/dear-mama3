@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mother Wellness - Dear Mama</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a class="logo" href="index.html" aria-label="Dear Mama Home">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="logo-text">Dear mama</span>
+        </a>
+
+        <ul class="nav-links" aria-label="Primary">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="baby-tracker.html">Baby Wellness</a></li>
+          <li><a href="mother-wellness.html" class="active">Mother Wellness</a></li>
+          <li><a href="ai-companion.html">AI Companion</a></li>
+        </ul>
+<div class="nav-actions">
+  <a id="nav-signin" class="nav-link-btn" href="signin.html">Sign In</a>
+  <a id="nav-getstarted" class="btn-primary" href="signup.html">Get Started</a>
+  <a id="nav-logout" class="nav-link-btn" href="#" style="display:none;">Log out</a>
+</div>
+
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" hidden>
+        <a href="index.html">Home</a>
+        <a href="baby-tracker.html">Baby Wellness</a>
+        <a href="mother-wellness.html" class="active">Mother Wellness</a>
+        <a href="ai-companion.html">AI Companion</a>
+        <div class="mobile-actions">
+          <a class="nav-link-btn" href="signin.html">Sign In</a>
+          <a class="btn-primary" href="#checkin-area">Check In</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="page-header page-header--mother">
+    <div class="container">
+      <span class="page-tag">Mother Wellness</span>
+      <h1>Your Wellness Matters Too</h1>
+      <p>Quick daily check-ins to support your physical recovery and mental well-being.</p>
+    </div>
+  </header>
+
+  <main class="content-section">
+    <div class="container">
+
+      <!-- DASHBOARD -->
+      <section class="dashboard-grid" aria-label="Wellness summary">
+        <article class="dashboard-card">
+          <div class="card-icon card-icon--pink" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <h4>Today’s Mood</h4>
+          <p class="metric metric--pink" id="mood-metric">😊</p>
+          <p class="hint">Last check-in: <span id="last-checkin">—</span></p>
+        </article>
+
+        <article class="dashboard-card">
+          <div class="card-icon card-icon--purple" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a10 10 0 1 0 10 10"></path>
+              <path d="M12 6v6l4 2"></path>
+            </svg>
+          </div>
+          <h4>Self-care Goal</h4>
+          <p class="metric metric--purple">10 min</p>
+          <p class="hint">Gentle breathing • stretch • water</p>
+        </article>
+      </section>
+
+      <!-- SWITCH -->
+      <section class="tabs" id="checkin-area" aria-label="Wellness check-in">
+        <div class="tabs-switch">
+          <button class="switch-btn active" id="mental-tab-btn">🧠 Mental</button>
+          <button class="switch-btn" id="physical-tab-btn">💪 Physical</button>
+        </div>
+
+        <!-- MENTAL -->
+        <section id="mental-tab" class="tab-content active" role="tabpanel" aria-labelledby="mental-tab-btn">
+          <div class="two-column">
+
+            <!-- LEFT -->
+            <div>
+              <div class="panel">
+                <div class="panel-header">
+                  <h3>Mood Check-in</h3>
+                  <p class="panel-sub">A small check-in can help you notice patterns over time.</p>
+                </div>
+
+                <div class="input-group">
+                  <label>How are you feeling today?</label>
+
+                  <div class="pill-group" role="group" aria-label="Mood">
+                    <button class="pill" type="button">😞 Low</button>
+                    <button class="pill active" type="button">🙂 Okay</button>
+                    <button class="pill" type="button">😊 Good</button>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <label>What feels hardest right now?</label>
+                  <div class="pill-group" role="group" aria-label="Stress trigger">
+                    <button class="pill active" type="button">Sleep</button>
+                    <button class="pill" type="button">Pain</button>
+                    <button class="pill" type="button">Anxiety</button>
+                    <button class="pill" type="button">Loneliness</button>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <label for="mental-notes">Notes (optional)</label>
+                  <textarea
+                    id="mental-notes"
+                    class="notes-textarea"
+                    placeholder="You can write freely here — what felt heavy today, what helped, or anything you want to remember…"
+                  ></textarea>
+                </div>
+
+                <button class="btn-primary full-width" type="button" id="save-mental">Save Check-in</button>
+                <p class="form-note">Prototype only — not medical advice.</p>
+              </div>
+
+              <aside class="tip-card" aria-label="Support tip">
+                <h4>💗 Gentle Reminder</h4>
+                <p>If you feel unsafe or unable to cope, reach out to a trusted person or a healthcare professional.</p>
+              </aside>
+            </div>
+
+            <!-- RIGHT -->
+            <div>
+              <div class="list-header">
+                <h3>Recent Check-ins</h3>
+                <p class="muted">Your saved entries appear here.</p>
+              </div>
+<div class="recent-header">
+  <button id="clearmentalBtn" type="button">Clear</button>
+</div>
+              <div class="entry-list" id="mental-list">
+                <!-- Firebase entries will render here -->
+              </div>
+
+              <div class="panel" style="margin-top:16px;">
+                <div class="panel-header">
+                  <h3>Emotional Well-Being Check (Inspired by EPDS)</h3>
+                  <p class="panel-sub">A short reflection about the past 7 days. Not a diagnosis.</p>
+                </div>
+
+                <div class="input-group">
+                  <label>1) Over the past week, how often have you felt overwhelmed or anxious?</label>
+                  <div class="pill-group epds-group" data-q="q1" role="group" aria-label="EPDS Q1">
+                    <button class="pill active" type="button" data-score="0">Not at all</button>
+                    <button class="pill" type="button" data-score="1">Sometimes</button>
+                    <button class="pill" type="button" data-score="2">Often</button>
+                    <button class="pill" type="button" data-score="3">Most of the time</button>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <label>2) Have you been able to enjoy things you usually like?</label>
+                  <div class="pill-group epds-group" data-q="q2" role="group" aria-label="EPDS Q2">
+                    <button class="pill active" type="button" data-score="0">Yes, as usual</button>
+                    <button class="pill" type="button" data-score="1">A little less</button>
+                    <button class="pill" type="button" data-score="2">Much less</button>
+                    <button class="pill" type="button" data-score="3">Not at all</button>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <label>3) How often have you felt sad, low, or tearful without a clear reason?</label>
+                  <div class="pill-group epds-group" data-q="q3" role="group" aria-label="EPDS Q3">
+                    <button class="pill active" type="button" data-score="0">Not at all</button>
+                    <button class="pill" type="button" data-score="1">Occasionally</button>
+                    <button class="pill" type="button" data-score="2">Quite often</button>
+                    <button class="pill" type="button" data-score="3">Almost always</button>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <label>4) Have you felt supported or emotionally safe this week?</label>
+                  <div class="pill-group epds-group" data-q="q4" role="group" aria-label="EPDS Q4">
+                    <button class="pill active" type="button" data-score="0">Yes, most of the time</button>
+                    <button class="pill" type="button" data-score="1">Sometimes</button>
+                    <button class="pill" type="button" data-score="2">Rarely</button>
+                    <button class="pill" type="button" data-score="3">Not at all</button>
+                  </div>
+                </div>
+
+                <button class="btn-secondary full-width" type="button" id="epds-eval">
+                  Get My Summary
+                </button>
+
+                <div class="epds-output" style="margin-top:14px;">
+                  <p class="form-note" id="epds-summary">—</p>
+                  <p class="muted" id="epds-scoreline" style="margin-top:6px;"></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- PHYSICAL -->
+        <section id="physical-tab" class="tab-content" role="tabpanel" aria-labelledby="physical-tab-btn" hidden>
+          <div class="two-column">
+
+            <!-- LEFT -->
+            <div>
+              <div class="panel">
+                <div class="panel-header">
+                  <h3>Physical Recovery</h3>
+                  <p class="panel-sub">Track what your body needs today.</p>
+                </div>
+
+                <div class="input-group">
+                  <label>Pain Level</label>
+                  <div class="pill-group" role="group" aria-label="Pain level">
+                    <button class="pill" type="button">0–3 Low</button>
+                    <button class="pill active" type="button">4–6 Medium</button>
+                    <button class="pill" type="button">7–10 High</button>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <label>Did you drink enough water?</label>
+                  <div class="pill-group" role="group" aria-label="Hydration">
+                    <button class="pill active" type="button">Yes</button>
+                    <button class="pill" type="button">Not yet</button>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <label for="physical-notes">Notes (optional)</label>
+                  <textarea
+                    id="physical-notes"
+                    class="notes-textarea notes-textarea--large"
+                    placeholder="You can describe pain, tension, recovery progress, or anything your body needs today…"
+                  ></textarea>
+                </div>
+
+                <button class="btn-primary full-width" type="button" id="save-physical">Save Physical Log</button>
+                <p class="form-note">Prototype only — consult a professional for medical concerns.</p>
+              </div>
+            </div>
+
+            <!-- RIGHT -->
+            <div>
+              <div class="list-header">
+                <h3>Recent Physical Logs</h3>
+                <p class="muted">Your saved entries appear here.</p>
+              </div>
+<div class="recent-header">
+  <button id="clearphysicalBtn" type="button">Clear</button>
+</div>
+           <div class="entry-list" id="physical-list"></div>
+
+<aside class="tip-card" style="margin-top:16px;" aria-label="Recovery tip">
+  <h4>Deep breathing </h4>
+  <p>Try a 2–3 minute of slow breathing. Small steps count.</p>
+
+<div class="breathing-box">
+
+  <div class="breath-visual">
+    <svg class="breath-svg" viewBox="0 0 120 120" width="180" height="180">
+      <circle class="breath-track" cx="60" cy="60" r="46"></circle>
+      <circle
+        class="breath-progress"
+        cx="60"
+        cy="60"
+        r="46"
+        stroke-dasharray="289"
+        stroke-dashoffset="289"
+      ></circle>
+    </svg>
+
+    <div class="breath-center">
+      <div id="breathing-phase" class="breath-phase">Ready</div>
+      <div id="breathing-timer" class="breath-timer">00:00</div>
+    
+      </div>
+    </div>
+  </div>
+<p id="breathing-text" class="breath-sub below-circle">
+  Hold gently...
+</p>
+
+  <div class="breath-actions">
+    <button id="breathing-btn" type="button" class="breathing-btn">
+      Start breathing
+    </button>
+
+    <button
+      id="breathing-end-btn"
+      type="button"
+      class="breathing-btn secondary"
+      style="display:none;"
+    >
+      End session
+    </button>
+  </div>
+
+</div>
+
+</div> 
+</aside>
+
+            </div>
+
+          </div>
+        </section>
+
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2024 Dear Mama. Made with love for mothers everywhere 💕</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- UI behaviour (tabs, pills, EPDS summary) -->
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const menu = document.querySelector(".mobile-menu");
+    toggle?.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!expanded));
+      menu.hidden = expanded;
+    });
+
+    // Switch tabs (Mental / Physical)
+    const mentalBtn = document.getElementById("mental-tab-btn");
+    const physicalBtn = document.getElementById("physical-tab-btn");
+    const mentalTab = document.getElementById("mental-tab");
+    const physicalTab = document.getElementById("physical-tab");
+
+    function showWellness(which) {
+      const isMental = which === "mental";
+      mentalBtn.classList.toggle("active", isMental);
+      physicalBtn.classList.toggle("active", !isMental);
+      mentalTab.hidden = !isMental;
+      physicalTab.hidden = isMental;
+    }
+
+    mentalBtn?.addEventListener("click", () => showWellness("mental"));
+    physicalBtn?.addEventListener("click", () => showWellness("physical"));
+
+    // Pill active toggle (shared for all pill groups)
+    document.querySelectorAll(".pill-group").forEach(group => {
+      group.addEventListener("click", (e) => {
+        const btn = e.target.closest(".pill");
+        if (!btn) return;
+        group.querySelectorAll(".pill").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+      });
+    });
+
+    // EPDS mini reflection (prototype summary)
+    document.getElementById("epds-eval")?.addEventListener("click", () => {
+      const summaryEl = document.getElementById("epds-summary");
+      const scoreLineEl = document.getElementById("epds-scoreline");
+      if (!summaryEl || !scoreLineEl) return;
+
+      let total = 0;
+
+      document.querySelectorAll(".epds-group").forEach(group => {
+        const active = group.querySelector(".pill.active");
+        const s = Number(active?.dataset?.score ?? 0);
+        total += Number.isNaN(s) ? 0 : s;
+      });
+
+      if (total <= 3) {
+        summaryEl.textContent =
+          "Your check-in suggests you’ve been coping overall this week. Keep prioritizing rest and small moments of care.";
+      } else if (total <= 7) {
+        summaryEl.textContent =
+          "Your check-in suggests you may be carrying some emotional strain. Consider reaching out to someone you trust or taking a small self-care step today.";
+      } else {
+        summaryEl.textContent =
+          "Your check-in suggests you may be feeling quite overwhelmed. You deserve support — consider speaking to a healthcare professional or a trusted person.";
+      }
+
+      scoreLineEl.textContent = `Prototype score: ${total} / 12 • Reflective only (not a diagnosis).`;
+    });
+  </script>
+<script type="module">
+  import { auth } from "./src/firebase.js";
+  import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+  import {
+    saveMoodCheckin,
+    listenMoodCheckins,
+    savePhysicalLog,
+    listenPhysicalLogs
+  } from "./src/data.js";
+
+  // rest of code...
+
+
+  /* =========================
+     Mood elements
+     ========================= */
+  const saveBtn = document.getElementById("save-mental");
+  const notesEl = document.getElementById("mental-notes");
+  const listEl = document.getElementById("mental-list");
+
+  /* =========================
+     Physical elements
+     ========================= */
+  const savePhysicalBtn = document.getElementById("save-physical");
+  const physicalNotesEl = document.getElementById("physical-notes");
+  const physicalListEl = document.getElementById("physical-list");
+
+  // Debug missing elements (helps a LOT)
+  if (!saveBtn || !notesEl || !listEl) {
+    console.error("Missing mood elements: save-mental / mental-notes / mental-list");
+  }
+  if (!savePhysicalBtn || !physicalNotesEl || !physicalListEl) {
+    console.error("Missing physical elements: save-physical / physical-notes / physical-list");
+  }
+
+  function fmtTime(ts) {
+    if (!ts || typeof ts !== "number") return "";
+    return new Date(ts).toLocaleString();
+  }
+
+  function activePillText(groupEl) {
+    return groupEl?.querySelector(".pill.active")?.innerText?.trim() || "";
+  }
+
+  /* =========================
+     Render: Mood
+     ========================= */
+  function renderMoodItem(item) {
+    return `
+      <article class="entry">
+        <div class="entry-left">
+          <div class="entry-badge badge-purple">🧠</div>
+          <div>
+            <p class="entry-title">${item.mood || ""} • Trigger: ${item.trigger || ""}</p>
+            <p class="entry-sub">${item.notes?.trim() ? item.notes : "No notes added."}</p>
+          </div>
+        </div>
+        <div class="entry-right">
+          <p class="entry-time">${fmtTime(item.createdAt)}</p>
+          <span class="entry-chip">Saved</span>
+        </div>
+      </article>
+    `;
+  }
+
+  function loadMoodHistory() {
+    listenMoodCheckins((moods) => {
+      listEl.innerHTML =
+        moods.map(renderMoodItem).join("") || `<p class="muted">No mood check-ins yet.</p>`;
+
+      if (moods.length > 0) {
+        const latest = moods[0];
+        const moodText = latest.mood || "";
+        document.getElementById("mood-metric").textContent =
+          moodText.includes("Low") ? "😞" : (moodText.includes("Good") ? "😊" : "🙂");
+        document.getElementById("last-checkin").textContent = fmtTime(latest.createdAt) || "—";
+      }
+    });
+  }
+
+  saveBtn?.addEventListener("click", async () => {
+    try {
+      if (!auth.currentUser) throw new Error("Please sign in first.");
+
+      const groups = document.querySelectorAll("#mental-tab .pill-group");
+      const mood = activePillText(groups[0]);
+      const trigger = activePillText(groups[1]);
+      const notes = notesEl.value.trim();
+
+      await saveMoodCheckin(mood, trigger, notes);
+      notesEl.value = "";
+    } catch (e) {
+      console.error(e);
+      alert(e.message);
+    }
+  });
+
+  /* =========================
+     Render: Physical
+     ========================= */
+  function renderPhysicalItem(item) {
+    return `
+      <article class="entry">
+        <div class="entry-left">
+          <div class="entry-badge badge-yellow">💪</div>
+          <div>
+            <p class="entry-title">${item.painLevel || ""} • Water: ${item.hydration || ""}</p>
+            <p class="entry-sub">${item.notes?.trim() ? item.notes : "No notes added."}</p>
+          </div>
+        </div>
+        <div class="entry-right">
+          <p class="entry-time">${fmtTime(item.createdAt)}</p>
+          <span class="entry-chip">Saved</span>
+        </div>
+      </article>
+    `;
+  }
+
+  function getPhysicalSelected() {
+    const physicalTab = document.querySelector("#physical-tab") || document;
+    const groups = physicalTab.querySelectorAll(".pill-group");
+
+    const painLevel = groups[0]?.querySelector(".pill.active")?.innerText?.trim() || "";
+    const hydration = groups[1]?.querySelector(".pill.active")?.innerText?.trim() || "";
+
+    return { painLevel, hydration };
+  }
+
+  function startListeningPhysical() {
+    listenPhysicalLogs((list) => {
+      physicalListEl.innerHTML =
+        list.map(renderPhysicalItem).join("") || `<p class="muted">No physical logs yet.</p>`;
+    });
+  }
+
+  savePhysicalBtn?.addEventListener("click", async () => {
+    try {
+      if (!auth.currentUser) throw new Error("Please sign in first.");
+
+      const { painLevel, hydration } = getPhysicalSelected();
+      const notes = physicalNotesEl.value.trim();
+
+      await savePhysicalLog(painLevel, hydration, notes);
+      physicalNotesEl.value = "";
+    } catch (e) {
+      console.error(e);
+      alert(e.message);
+    }
+  });
+
+  /* =========================
+     Start after login
+     ========================= */
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      listEl.innerHTML = `<p class="muted">Please sign in to see your check-ins.</p>`;
+      if (physicalListEl) {
+        physicalListEl.innerHTML = `<p class="muted">Please sign in to see your physical logs.</p>`;
+      }
+      return;
+    }
+
+    loadMoodHistory();
+    startListeningPhysical(); // ✅ THIS WAS MISSING
+  });
+</script>
+<script type="module">
+  import { auth } from "./src/firebase.js";
+  import { onAuthStateChanged, signOut } 
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+  const signInBtn = document.getElementById("nav-signin");
+  const getStartedBtn = document.getElementById("nav-getstarted");
+  const logoutBtn = document.getElementById("nav-logout");
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // ✅ USER LOGGED IN
+      signInBtn.style.display = "none";
+      getStartedBtn.style.display = "none";
+      logoutBtn.style.display = "inline-block";
+    } else {
+      // ❌ USER LOGGED OUT
+      signInBtn.style.display = "inline-block";
+      getStartedBtn.style.display = "inline-block";
+      logoutBtn.style.display = "none";
+    }
+  });
+
+  logoutBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+    await signOut(auth);
+    window.location.href = "index.html";
+  });
+</script>
+<script type="module" src="./script.js"></script>
+
+</body>
+</html>
