@@ -311,6 +311,9 @@
     const metricSleep = document.getElementById("metric-sleep");
     const metricLastSleep = document.getElementById("metric-last-sleep");
 
+const clearFeedingsLink = document.getElementById("clearFeedingsBtn");
+const clearSleepsLink = document.getElementById("clearsleepBtn");
+
     function getActivePillText(tabId, groupIndex) {
       const groups = document.querySelectorAll(`#${tabId} .pill-group`);
       return groups[groupIndex]?.querySelector(".pill.active")?.innerText?.trim() || "";
