@@ -442,10 +442,14 @@
     console.error("Missing physical elements: save-physical / physical-notes / physical-list");
   }
 
-  function fmtTime(ts) {
-    if (!ts || typeof ts !== "number") return "";
-    return new Date(ts).toLocaleString();
-  }
+ function fmtTime(ms) {
+  if (!ms) return "—";
+  return new Date(ms).toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
 
   function activePillText(groupEl) {
     return groupEl?.querySelector(".pill.active")?.innerText?.trim() || "";
